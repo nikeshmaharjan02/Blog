@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand mx-5 fs-4" style="font-family: Poppins" href="/">B<span class="text-danger">--</span>log</a>
+    
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-5">
+        <li class="nav-item px-2">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item px-2">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <% if (!currentUser) { %>
+        <li class="nav-item px-2">
+          <a class="nav-link" href="https://www.google.com/maps/place/Satungal,+Chandragiri+44600/@27.6835373,85.249368,15z/data=!3m1!4b1!4m6!3m5!1s0x39eb22eb0e954efd:0x28f1bede4d062122!8m2!3d27.6825156!4d85.2489603!16s%2Fm%2F04jl3s0?entry=ttu">Contact</a>
+        </li>
+        <% } else { %>
+        <li class="nav-item px-2">
+          <a class="nav-link" href="/blog">Blog</a>
+        </li>
+        <li class="nav-item px-2">
+          <a class="nav-link" href="/addblog">Add Blog</a>
+        </li>
+        <li class="nav-item px-2">
+          <a class="nav-link" href="/profile">Profile</a>
+        </li>
+        <% } %>
+      </ul>
+
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 mx-5">
+        <% if (currentUser) { %>
+          <li class="nav-item">
+            <a href="/logout"><button class="btn btn-outline-dark px-4" type="submit">Logout</button></a>
+          </li>
+        <% } else { %>
+          <li class="nav-item">
+            <a href="/login"><button class="btn btn-outline-dark px-4" type="submit">Login</button></a>
+          </li>
+        <% } %>
+      </ul>
+    </div>
+  </div>
+</nav>
